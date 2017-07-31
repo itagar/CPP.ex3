@@ -1,0 +1,47 @@
+itagar
+305392508
+Itai Tagar
+
+
+===================================
+=  README for ex3: Matrix         =
+===================================
+
+
+==================
+=  Files:        =
+==================
+Matrix.h
+Matrix.hpp
+MatrixException.h
+Makefile
+README
+
+==================
+=  Answers:      =
+==================
+
++--------------+-------------------------+---------------------+
+|              |          SMALL          |         BIG         |
++              +-------------------------+---------------------+
+|              |      +     |      *     |     +     |    *    |
++--------------+------------+------------+-----------+---------+
+| NON-PARALLEL |  7.38e-07  |   7.8e-07  | 0.0128148 | 13.6588 |
++--------------+------------+------------+-----------+---------+
+|   PARALLEL   | 9.2904e-05 | 3.8835e-05 | 0.0344187 | 2.63971 |
++--------------+------------+------------+-----------+---------+
+
+
+1.	There is a difference between the different modes.
+	We can see that the Parallel mode performed better than the Non-Parallel mode especially
+	in the big file. The Parallel mode lowered the time complexity by taking each row of the
+	Matrix and working on it separately at the same time. These difference between the two files
+	occurred because in the small file the amount of time to open all the threads for the Matrix
+	is bigger than the actual input itself and the Non-Parallel mode performed slightly better
+	in the small file (for a small input).
+
+2.	There is a difference between the addition operation and the multiplication operation.
+	The addition operation showed smaller differences between the two modes than the differences
+	in the multiplication operation, this is because the complexity of the multiplication is
+	transformed from O(n^3) to O(n^2), while the complexity of the addition transformed
+	from O(n^2) to O(n).
